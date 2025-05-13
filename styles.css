@@ -180,3 +180,27 @@ body {
         font-size: 18px;
     }
 }
+
+/* Evita el zoom hacia afuera */
+html, body {
+    touch-action: manipulation; /* Previene desplazamiento raro en móviles */
+    overscroll-behavior: contain; /* Evita efectos de desplazamiento no deseados */
+}
+
+/* Ajuste para móviles: las imágenes ya no se verán cortadas */
+@media (max-width: 768px) {
+    .row {
+        display: flex;
+        flex-direction: column; /* En móviles, las imágenes se apilan */
+        align-items: center; /* Centra las imágenes */
+        gap: 10px;
+    }
+
+    .image-box {
+        width: 90%; /* Se ajusta bien en pantallas pequeñas */
+    }
+
+    img {
+        width: 100%; /* Evita cortes en la imagen */
+    }
+}
