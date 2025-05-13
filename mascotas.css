@@ -75,11 +75,10 @@ color:#5f0418f4}
 
 header, footer {
     padding: 20px;
-    background-color: #5f0418f4; 
+    background-color: #5f0418f4;
     color: white;
-    border-radius: 0; 
+    width: 100vw; /* Asegura que cubra toda la pantalla */
 }
-
 
 .image-box img {
     transition: transform 0.4s ease-in-out; 
@@ -90,11 +89,12 @@ header, footer {
 }
 
 
+/* Ajuste de navegación */
 .navigation {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: space-around;
     text-align: center;
+    flex-wrap: wrap; /* Para que se acomode en pantallas pequeñas */
 }
 
 .nav-link {
@@ -110,6 +110,7 @@ font-size: 25px;
 
 }
 
+/* Contenedor de imágenes */
 .image-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr); /* Dos imágenes por fila */
@@ -119,10 +120,10 @@ font-size: 25px;
 }
 
 .image-box {
-    width: 350px; /* Tamaño más grande */
+    width: 90%; /* Ajuste dinámico */
+    max-width: 350px;
     padding: 10px;
     background: rgb(226, 188, 205);
-    margin-left: 55px;
     border-radius: 20px;
     box-shadow: 0 6px 12px #712838;
     text-align: center;
@@ -139,3 +140,20 @@ font-size: 25px;
     transform: scale(1.15); /* Efecto hover mejorado */
 }
 
+@media (max-width: 768px) {
+    .image-container {
+        grid-template-columns: repeat(1, 1fr); /* Muestra 1 imagen por fila */
+    }
+
+    .image-box {
+        width: 95%; /* Se ajusta mejor en pantallas más pequeñas */
+    }
+
+    header, footer {
+        padding: 15px;
+    }
+
+    .nav-link {
+        font-size: 18px;
+    }
+}

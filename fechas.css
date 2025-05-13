@@ -117,3 +117,17 @@ header, footer {
 .event-box p {
     font-size: 18px;
 }
+@media (max-width: 768px) {
+
+    .image-box {
+        width: 95%; /* Se ajusta mejor en pantallas más pequeñas */
+    }
+
+    header, footer {
+        padding: 15px;
+    }
+
+    .nav-link {
+        font-size: 18px;
+    }
+}

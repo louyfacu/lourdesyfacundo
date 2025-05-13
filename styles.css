@@ -136,7 +136,16 @@ font-size: 25px;
     color: #ce697f;
 
 }
-
+@media (max-width: 768px) {
+   .row {
+    display: flex;
+    gap: 18px;
+    justify-content: center;
+}
+    .image-box {
+        width: 90%;
+    }
+}
 
 @keyframes fadeIn {
     from {

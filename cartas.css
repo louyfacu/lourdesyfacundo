@@ -103,3 +103,18 @@ h2 {
     border-radius: 10px;
     transition: transform 0.4s ease-in-out;
 }
+@media (max-width: 768px) {
+   
+
+    .image-box {
+        width: 95%; /* Se ajusta mejor en pantallas más pequeñas */
+    }
+
+    header, footer {
+        padding: 15px;
+    }
+
+    .nav-link {
+        font-size: 18px;
+    }
+}
