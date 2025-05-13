@@ -140,20 +140,4 @@ font-size: 25px;
     transform: scale(1.15); /* Efecto hover mejorado */
 }
 
-@media (max-width: 768px) {
-    .image-container {
-        grid-template-columns: repeat(1, 1fr); /* Muestra 1 imagen por fila */
-    }
 
-    .image-box {
-        width: 95%; /* Se ajusta mejor en pantallas más pequeñas */
-    }
-
-    header, footer {
-        padding: 15px;
-    }
-
-    .nav-link {
-        font-size: 18px;
-    }
-}
