@@ -1,0 +1,154 @@
+body {
+    font-family: "Alfa Slab One", serif;
+    text-align: center;
+    background-color: #eaaab888; 
+    font-weight: 100;
+    color: #d37d90; 
+}
+
+
+.gallery {
+    padding: 20px;
+}
+
+h1 {
+    font-weight: 40;
+}
+
+.image-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.row {
+    display: flex;
+    gap: 18px;
+    justify-content: center;
+}
+
+.image-box {
+    width: 250px;
+    padding: 10px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px #ce697f; 
+    text-align: center;
+}
+
+img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+
+
+h2 {
+   
+font-weight: 5;
+font-size: 25px;
+color:#ce697f}
+ 
+h3 {
+  
+font-weight: 5;
+font-size: 15px;
+color:#ce697f93
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header, footer {
+    padding: 20px;
+    background-color: #ce697f; 
+    color: white;
+    border-radius: 0; 
+}
+
+
+.image-box img {
+   
+    transition: transform 0.4s ease-in-out; 
+}
+
+.image-box img:hover {
+    transform: scale(1.275); 
+}
+
+.popup-hidden {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0; top: 0;
+    width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.579);
+}
+
+.popup-show {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-content {
+    background: white;
+    color: #a9325e;
+    padding: 20px;
+    border-radius: 10px;
+    width: 150%;
+    max-width: 600px;
+    box-shadow: 0 0 25px rgba(14, 14, 14, 0.3);
+    font-family: "Cal Sans", sans-serif;
+    position: relative;
+    text-align: left;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px; right: 15px;
+    font-size: 20px;
+    cursor: pointer;
+    color: #bd3a8ae6;
+}
+
+
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+}
+
+.nav-link {
+    text-decoration: none;
+    font-family: "Alfa Slab One", serif;
+     padding: 
+     
+     
+     5px;
+    font-weight: 5;
+font-size: 25px;
+    color: #ce697f;
+
+}
+
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(2px);
+    }
+    to {
+        opacity: 2;
+        transform: translateY(0);
+    }
+}
+
+body {
+    animation: fadeIn 6s ease-in-out;
+}

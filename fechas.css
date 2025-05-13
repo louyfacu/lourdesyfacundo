@@ -1,0 +1,119 @@
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(2px);
+    }
+    to {
+        opacity: 1; /* Ajuste para que la animación funcione correctamente */
+        transform: translateY(0);
+    }
+}
+
+body {
+    font-family: "Alfa Slab One", serif;
+    text-align: center;
+    background-color: #2c0655b0; 
+    color: #cab6e4; 
+    animation: fadeIn 4s ease-in-out; /* Aplicando el efecto de desvanecimiento */
+}
+
+.gallery {
+    padding: 20px;
+}
+
+h1 {
+    font-weight: normal; /* Ajustando el peso de la fuente */
+}
+
+.image-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+.row {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+.image-box {
+    width: 250px;
+    padding: 10px;
+    background: rgb(178, 158, 213);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px #0303be; 
+    text-align: center;
+}
+
+.image-box img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.4s ease-in-out;
+}
+
+.image-box img:hover {
+    transform: scale(1.15); /* Efecto hover mejorado */
+}
+
+h2 {
+    font-size: 25px;
+    color: #210479d4;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header, footer {
+    padding: 20px;
+    background-color: #1b045ff4; 
+    color: white;
+}
+
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+}
+
+.nav-link {
+    text-decoration: none;
+    font-family: "Alfa Slab One", serif;
+    font-size: 25px;
+    color: #1b045fc8;
+}
+.events-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.event-box {
+    background-color: #1b045ff4; /* Violeta fuerte */
+    padding: 20px;
+    width: 300px;
+    border-radius: 25px;
+    box-shadow: 0 8px 15px rgba(255, 255, 255, 0.506);
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.event-box:hover {
+    transform: scale(1.05);
+}
+
+.event-box h2 {
+    font-size: 24px;
+    color: #af97d1; /* Color rosa suave */
+}
+
+.event-box p {
+    font-size: 18px;
+}
