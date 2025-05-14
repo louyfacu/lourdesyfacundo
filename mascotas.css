@@ -89,55 +89,62 @@ header, footer {
 }
 
 
-/* Ajuste de navegación */
+
 .navigation {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
+    align-items: center;
     text-align: center;
-    flex-wrap: wrap; /* Para que se acomode en pantallas pequeñas */
 }
 
 .nav-link {
     text-decoration: none;
     font-family: "Alfa Slab One", serif;
-     padding: 
-     
-
-     5px;
-    font-weight: 5;
-font-size: 25px;
+    font-size: 25px;
     color: #5f0418f4;
 
 }
 
-/* Contenedor de imágenes */
-.image-container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Dos imágenes por fila */
-    gap: 30px;
-    justify-content: center;
-    align-items: center;
-}
+
+
+
+
+
+
+
 
 .image-box {
-    width: 90%; /* Ajuste dinámico */
-    max-width: 350px;
+    width: 350px;
     padding: 10px;
     background: rgb(226, 188, 205);
     border-radius: 20px;
     box-shadow: 0 6px 12px #712838;
+    display: flex;
+    flex-direction: column; /* Asegura que los elementos dentro se apilen verticalmente */
+    justify-content: center;
+    align-items: center;
     text-align: center;
 }
 
 .image-box img {
-    width: 100%;
+    max-width: 100%;
+
     height: auto;
-    border-radius: 10px;
-    transition: transform 0.4s ease-in-out;
+    display: block;
+    margin: auto;
 }
+
+.image-text {
+    margin-top: 10px; /* Añade espacio entre la imagen y el texto */
+    font-size: 16px;
+    color: #712838;
+}
+
+
+
+
 
 .image-box img:hover {
     transform: scale(1.15); /* Efecto hover mejorado */
 }
-
 
