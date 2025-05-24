@@ -330,3 +330,32 @@ html {
   scrollbar-width: thin;
   scrollbar-color: #ce697f #fce4ec;
 }
+
+
+.countdown {
+  padding: 30px;
+  background-color: #fce1ea;
+  border-radius: 20px;
+  box-shadow: 0 0 15px rgba(211, 125, 162, 0.7);
+  margin: 30px auto;
+  width: 90%;
+  max-width: 600px;
+  text-align: center;
+}
+
+.countdown h2 {
+  font-family: 'Dancing Script', cursive;
+  font-size: 32px;
+  color: #bd3a8a;
+  margin-bottom: 15px;
+}
+
+#contador {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  color: #bd3a8a;
+}
+p {
+    font-weight: 1;
+}

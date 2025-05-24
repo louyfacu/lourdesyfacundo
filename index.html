@@ -18,6 +18,7 @@
   <div class="curtain"></div>
 
   <header>
+    
     <h1>Lourdes y Facundo</h1>
     <p>Una página web para recordar nuestros lindos momentos y sentimientos.</p>
   </header>
@@ -34,7 +35,10 @@
         <li><a href="preguntas.html"><i class="preguntas"></i> Cuestionario</a></li>
   </ul>
 </nav>
-
+<br>
+<section class="frase-romantica">
+  <p class="frase">Aquí aparecerá una frase romántica...</p>
+</section>
 
   <section class="gallery">
     <h2>I n i c i o</h2>
@@ -75,6 +79,13 @@
       </div>
     </div>
   </section>
+
+<section class="countdown">
+  <h2>Cuenta regresiva a tu cumple</h2>
+  <div id="contador">Cargando...</div>
+</section>
+
+
 
   <footer>
     <p>Para el amor de mi vida.</p>
@@ -139,6 +150,50 @@
     };
     topBtn.onclick = () => window.scrollTo({ top: 0, behavior: 'smooth' });
   </script>
+
+<script>
+  // Elegí tu fecha importante (editá esto)
+  const fechaEspecial = new Date("2025-10-08T00:00:00").getTime();
+  const contadorElem = document.getElementById("contador");
+
+  function actualizarContador() {
+    const ahora = new Date().getTime();
+    const distancia = fechaEspecial - ahora;
+
+    if (distancia < 0) {
+      contadorElem.innerHTML = "¡Felices 17, mi gorda hermosa!";
+      clearInterval(contadorInterval);
+      return;
+    }
+
+    const dias = Math.floor(distancia / (1000 * 60 * 60 * 24));
+    const horas = Math.floor((distancia % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutos = Math.floor((distancia % (1000 * 60 * 60)) / (1000 * 60));
+    const segundos = Math.floor((distancia % (1000 * 60)) / 1000);
+
+    contadorElem.innerHTML = `${dias} días, ${horas}h ${minutos}m ${segundos}s`;
+  }
+
+  // Actualiza cada segundo
+  const contadorInterval = setInterval(actualizarContador, 1000);
+  actualizarContador();
+</script>
+<script>
+  const frases = [
+    "Sos mi lugar favorito Lourdes.",
+    "Te amo muchisimo mas de lo que pensas o demuestro.",
+    "Mi vida es más linda desde que estas en ella.",
+    "Mi corazoncito tiene escrito tu nombre.",
+    "Siempre podes contar conmigo, pase lo que pase",
+    "Estaria enamorado de vos, en esta vida y en cualquiera.",
+    "Cada risa, cada enojo, y cada momento que se te ocurra, no me lo olvido nunca.",
+    "Sos lo mejor que una persona puede tener en su vida"
+    
+  ];
+  const indiceAleatorio = Math.floor(Math.random() * frases.length);
+  document.querySelector(".frase").textContent = frases[indiceAleatorio];
+</script>
+
 </body>
 
 </html>
