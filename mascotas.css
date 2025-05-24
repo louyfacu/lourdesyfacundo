@@ -9,28 +9,39 @@
     }
 }
 
+@media (max-width: 768px) {
+
+    .image-box {
+        width: 95%; /* Se ajusta mejor en pantallas más pequeñas */
+    }
+
+    header, footer {
+        padding: 15px;
+    }
+
+    .nav-link {
+        font-size: 18px;
+    }
+}
 body {
-    animation: fadeIn 4s ease-in-out;
+    animation: fadeIn 2s ease-in-out;
 }
 
 
 
 
 body {
-    font-family: "Alfa Slab One", serif;
+    font-weight: 900;
+      font-family: 'Quicksand', sans-serif;
     text-align: center;
-    background-color: #55061fb0; 
-    font-weight: 100;
+    background-color: #eaaab888; 
+
     color: #a73f55; 
 }
 
 
 .gallery {
     padding: 20px;
-}
-
-h1 {
-    font-weight: 40;
 }
 
 .image-container {
@@ -59,12 +70,23 @@ img {
     width: 100%;
     border-radius: 10px;
 }
-
+h1 {
+     font-family: 'Dancing Script', cursive;
+       font-weight: 700;
+       font-size: 100;
+}
 h2 {
-   
-font-weight: 5;
+font-weight: 700;
 font-size: 25px;
-color:#5f0418f4}
+color:#ce697f}
+
+h3 {
+  
+font-weight: 450;
+font-size: 18px;
+font-family: 'Quicksand', sans-serif;
+color:#ce697f93
+}
 
 
 * {
@@ -73,13 +95,21 @@ color:#5f0418f4}
     box-sizing: border-box;
 }
 
-header, footer {
+header {
+ font-size: larger;
     padding: 20px;
-    background-color: #5f0418f4;
+    background-color: #ce697f; 
     color: white;
-    width: 100vw; /* Asegura que cubra toda la pantalla */
+    border-radius: 0; 
+    font-family: 'Dancing Script', cursive;
 }
-
+footer {
+    font-size: 30px;    padding: 20px;
+    background-color: #ce697f; 
+    color: white;
+    border-radius: 0; 
+    font-family: 'Dancing Script', cursive;
+}
 .image-box img {
     transition: transform 0.4s ease-in-out; 
 }
@@ -104,12 +134,6 @@ header, footer {
     color: #5f0418f4;
 
 }
-
-
-
-
-
-
 
 
 
@@ -141,10 +165,108 @@ header, footer {
 }
 
 
-
-
-
 .image-box img:hover {
     transform: scale(1.15); /* Efecto hover mejorado */
 }
 
+
+html {
+  scroll-behavior: smooth;
+}
+.navbar {
+  position: sticky; /* Fijo al hacer scroll */
+  top: 0;
+  width: 100%;
+background-color: #ce697fce; 
+  padding: 10px 0;
+  z-index: 100;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  padding: 0;
+  margin: 0;
+}
+
+.navbar a {
+  color: #fff;
+  text-decoration: none;
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+  color: #fcd2e0;
+}
+
+#topBtn {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  background-color: #ce697f;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 50%;
+  font-size: 20px;
+  cursor: pointer;
+  display: none;
+  box-shadow: 0 0 8px #a9325e;
+  z-index: 999;
+}
+
+
+
+
+
+/* 💡 Asegura que el contenido no se recorte en pantallas pequeñas */
+html, body {
+  width: 100%;
+  overflow-x: auto; /* Permite scroll lateral si algo se desborda */
+}
+
+/* 💡 Asegura que ningún elemento se pase del ancho visible */
+* {
+  box-sizing: border-box;
+  max-width: 100%;
+}
+
+/* 💡 En móviles, permite scroll horizontal para filas de imágenes */
+@media (max-width: 768px) {
+  .row {
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: stretch;
+    gap: 12px;
+    padding: 10px;
+    scroll-snap-type: x mandatory; /* Para deslizar suave por imagen */
+  }
+
+  .image-box {
+    flex: 0 0 auto;
+    width: 80%;
+    scroll-snap-align: start;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+
+  header, footer {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+  }
+}

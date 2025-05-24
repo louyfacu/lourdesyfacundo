@@ -10,7 +10,8 @@
 }
 
 body {
-    font-family: "Alfa Slab One", serif;
+     font-weight: 900;
+      font-family: 'Quicksand', sans-serif;
     text-align: center;
     background-color: #2c0655b0; 
     color: #cab6e4; 
@@ -19,6 +20,9 @@ body {
 
 .gallery {
     padding: 20px;
+     font-weight: 900;
+      font-family: 'Quicksand', sans-serif;
+
 }
 
 h1 {
@@ -71,8 +75,10 @@ h2 {
 
 header, footer {
     padding: 20px;
+    font-size: 25px;
     background-color: #1b045ff4; 
     color: white;
+    font-family: 'Dancing Script', cursive;
 }
 
 .navigation {
@@ -84,7 +90,8 @@ header, footer {
 
 .nav-link {
     text-decoration: none;
-    font-family: "Alfa Slab One", serif;
+    font-weight: 900;
+      font-family: 'Quicksand', sans-serif;
     font-size: 25px;
     color: #1b045fc8;
 }
@@ -130,4 +137,38 @@ header, footer {
     .nav-link {
         font-size: 18px;
     }
+}
+.navbar {
+  position: sticky; /* Fijo al hacer scroll */
+  top: 0;
+  width: 100%;
+background-color: #4e33a1f4; 
+  padding: 10px 0;
+  z-index: 100;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  padding: 0;
+  margin: 0;
+}
+
+.navbar a {
+  color: #fff;
+  text-decoration: none;
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+  color: #fcd2e0;
 }

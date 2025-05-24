@@ -1,0 +1,200 @@
+html {
+  scroll-behavior: smooth;
+}
+
+.navbar {
+  position: sticky; /* Fijo al hacer scroll */
+  top: 0;
+  width: 100%;
+background-color: #e34545db; 
+  padding: 10px 0;
+  z-index: 100;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.361);
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  padding: 0;
+  margin: 0;
+}
+
+.navbar a {
+  color: #fff;
+  text-decoration: none;
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+  color: #f8c7d7;
+}
+
+
+header, footer {
+  padding: 2px 0px; /* Menos padding */
+  font-size: 20px;     /* Letra un poco más chica */
+  background-color: #720505;
+  color: white;
+  font-family: 'Dancing Script', cursive;
+}
+
+h1 {
+    font-family: 'Dancing Script', cursive;
+       font-weight: 700;
+}
+
+body {
+      text-align: center;
+      background-color: #da8c8c88;
+      font-weight: 900;
+      font-family: 'Quicksand', sans-serif;
+      color: #d37d7d;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+
+.formulario {
+      max-width: 700px;
+      margin: 60px auto 80px;
+      background-color: #e6a0a0; /* Caja rosada */
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 0 15px #00000050;
+      text-align: left;
+    }
+
+.pregunta {
+      background-color: #fbd3d3;
+      padding: 20px;
+      border-radius: 15px;
+      margin-bottom: 20px;
+      box-shadow: 0 0 10px #00000066;
+    }
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+
+.pregunta p {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+label {
+      display: inline-block;
+      width: 48%;
+      margin-bottom: 10px;
+      font-weight: 500;
+      cursor: pointer;
+    }
+
+    input[type="radio"] {
+      margin-right: 10px;
+    }
+
+    button {
+      display: block;
+      margin: 30px auto 10px;
+      padding: 12px 30px;
+      font-size: 18px;
+      background: #ce6969;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background: #ce4949;
+    }
+
+    #resultado {
+      margin-top: 30px;
+      font-size: 18px;
+      background: #fff;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 0 15px #ce696966;
+      color: #ce6969;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(2px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 768px) {
+
+    .image-box {
+        width: 95%; /* Se ajusta mejor en pantallas más pequeñas */
+    }
+
+    header, footer {
+        padding: 15px;
+    }
+
+    .nav-link {
+        font-size: 18px;
+    }
+}
+
+/* 💡 Asegura que el contenido no se recorte en pantallas pequeñas */
+html, body {
+  width: 100%;
+  overflow-x: auto; /* Permite scroll lateral si algo se desborda */
+}
+
+/* 💡 Asegura que ningún elemento se pase del ancho visible */
+* {
+  box-sizing: border-box;
+  max-width: 100%;
+}
+
+/* 💡 En móviles, permite scroll horizontal para filas de imágenes */
+@media (max-width: 768px) {
+  .row {
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: stretch;
+    gap: 12px;
+    padding: 10px;
+    scroll-snap-type: x mandatory; /* Para deslizar suave por imagen */
+  }
+
+  .image-box {
+    flex: 0 0 auto;
+    width: 80%;
+    scroll-snap-align: start;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+
+  header, footer {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+  }
+}
