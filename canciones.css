@@ -1,0 +1,114 @@
+/* Fondo general naranja clarito */
+body {
+  background-color: #fff2e0; /* Naranja clarito */
+  font-family: 'Quicksand', sans-serif;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+/* Header estilizado */
+header, footer {
+  width: 100%;
+  text-align: center;
+  font-size: larger;
+  padding: 18px;
+  background-color: #ee8937; /* Naranja fuerte */
+  color: white;
+  font-family: 'Dancing Script', cursive;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Navbar fija */
+.navbar {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background-color: #e89d4cb9;
+  padding: 12px 0;
+  z-index: 100;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar a {
+  color: #fff;
+  text-decoration: none;
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+  color: #ffb347;
+}
+
+/* Contenedor general del álbum */
+.album-musical {
+  padding: 40px;
+  background-color: #fbe3cd;
+  border-radius: 25px;
+  box-shadow: 0 0 20px #edb98eaa;
+  margin: 40px auto;
+  width: 90%;
+  max-width: 720px;
+}
+
+/* Título del álbum */
+.album-musical h2 {
+  font-family: 'Quicksand', sans-serif;
+  color: #d48233;
+  margin-bottom: 30px;
+  font-size: 36px;
+  font-weight: 1200;
+}
+h2 {
+    text-align: center;
+     font-family: 'Quicksand', sans-serif;
+}
+
+/* Caja para cada canción */
+.caja-cancion {
+  background-color: #fff5e7;
+  border: 2px solid #ffd9a8;
+  border-radius: 15px;
+  padding: 18px;
+  margin-bottom: 25px;
+  box-shadow: 0 4px 12px #e3a47f90;
+  text-align: left;
+}
+
+/* Nombre de la canción */
+.caja-cancion p {
+  font-weight: 700;
+  color: #cc7722;
+  margin-bottom: 12px;
+  font-size: 19px;
+  font-family: 'Quicksand', sans-serif;
+}
+
+/* Spotify player responsive */
+.caja-cancion iframe {
+  border-radius: 12px;
+  width: 100%;
+  height: 80px;
+  border: none;
+}
+
+/* Reset y scroll suave */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
