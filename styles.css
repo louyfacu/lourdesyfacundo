@@ -7,7 +7,12 @@ body {
     color: #d37d90; 
 
 }
-
+html, body {
+  width: 100%;
+  overflow-x: hidden; /* ❌ evitar scroll lateral */
+  overflow-y: auto;    /* ✅ permitir scroll vertical */
+  touch-action: auto;  /* importante para que el scroll funcione normal */
+}
 .gallery {
     padding: 20px;
 }
@@ -138,15 +143,18 @@ font-size: 25px;
 
 }
 @media (max-width: 768px) {
-   .row {
-    display: flex;
-    gap: 18px;
-    justify-content: center;
+  .navbar ul {
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+    padding: 10px 0;
+  }
+
+  .navbar a {
+    font-size: 16px;
+  }
 }
-    .image-box {
-        width: 90%;
-    }
-}
+
 
 @keyframes fadeIn {
     from {
@@ -168,7 +176,7 @@ body {
 /* Evita el zoom hacia afuera */
 html, body {
     touch-action: manipulation; /* Previene desplazamiento raro en móviles */
-    overscroll-behavior: contain; /* Evita efectos de desplazamiento no deseados */
+
 }
 
 /* Ajuste para móviles: las imágenes ya no se verán cortadas */
@@ -233,10 +241,12 @@ background-color: #ce697fce;
   list-style: none;
   display: flex;
   justify-content: center;
+  flex-wrap: wrap; /* 💡 Esta línea evita el recorte */
   gap: 30px;
   padding: 0;
   margin: 0;
 }
+
 
 .navbar a {
   color: #fff;
