@@ -201,3 +201,30 @@ h2 {
     font-size: 13px;
   }
 }
+
+
+/* Scrollbar rosa linda y suave (Webkit para Chrome, Edge, Safari) */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #fce4ec; /* rosa muy suave */
+  border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #ce697f; /* rosa principal */
+  border-radius: 20px;
+  border: 3px solid #fce4ec; /* borde suave entre track y thumb */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #a73f55; /* tono más fuerte al pasar el mouse */
+}
+
+/* Scrollbar para Firefox */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: #ce697f #fce4ec;
+}
