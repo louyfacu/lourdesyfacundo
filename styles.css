@@ -359,3 +359,79 @@ html {
 p {
     font-weight: 1;
 }
+
+
+/* Estilos carta */
+.carta-de-amor {
+  background: #fff0f8;
+  padding: 60px 20px;
+  text-align: center;
+  font-family: 'Quicksand', sans-serif;
+  color: #333;
+  margin-top: 40px;
+  position: relative;
+}
+
+.carta-de-amor h2 {
+  font-family: 'Dancing Script', cursive;
+  font-size: 2.4em;
+  color: #e75480;
+  margin-bottom: 30px;
+}
+
+/* Botón abrir */
+.boton-carta {
+  display: inline-block;
+  background-color: #e75480;
+  color: white;
+  padding: 12px 25px;
+  border-radius: 30px;
+  font-weight: bold;
+  font-size: 1.1em;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.boton-carta:hover {
+  background-color: #d43f6e;
+}
+
+.checkbox-carta {
+  display: none;
+}
+
+/* Carta oculta por defecto */
+.carta-contenido {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 1s ease, opacity 1s ease;
+  opacity: 0;
+  margin-top: 20px;
+}
+
+/* Cuando está marcada, mostramos la carta */
+.checkbox-carta:checked ~ .carta-contenido {
+  max-height: 500px;
+  opacity: 1;
+}
+
+/* Papel de carta */
+.carta-papel {
+  background-color: #fff;
+  border-radius: 20px;
+  padding: 30px;
+  margin: 0 auto;
+  max-width: 700px;
+  box-shadow: 0 8px 25px rgba(255, 105, 135, 0.3);
+  font-size: 1.2em;
+  line-height: 1.9;
+  font-family: 'Dancing Script', cursive;
+  transform: translateY(20px);
+  transition: transform 1s ease;
+}
+
+/* Animación de subida cuando aparece */
+.checkbox-carta:checked ~ .carta-contenido .carta-papel {
+  transform: translateY(0);
+}
+
