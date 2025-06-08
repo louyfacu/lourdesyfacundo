@@ -43,6 +43,8 @@ color:#ce697f93
 .row {
     display: flex;
     gap: 18px;
+    font-size: larger;
+    font-weight: bold;
     justify-content: center;
 }
 
@@ -404,15 +406,17 @@ p {
 .carta-contenido {
   max-height: 0;
   overflow: hidden;
-  transition: max-height 1s ease, opacity 1s ease;
+  transition: max-height 1.2s ease, opacity 1.2s ease;
   opacity: 0;
   margin-top: 20px;
+  position: relative; /* Asegura que no se corte por animaciones */
 }
 
-/* Cuando está marcada, mostramos la carta */
+/* Mostrar carta cuando el checkbox está marcado */
 .checkbox-carta:checked ~ .carta-contenido {
-  max-height: 500px;
+  max-height: 9999px;
   opacity: 1;
+  overflow: visible;
 }
 
 /* Papel de carta */
@@ -427,10 +431,10 @@ p {
   line-height: 1.9;
   font-family: 'Dancing Script', cursive;
   transform: translateY(20px);
-  transition: transform 1s ease;
+  transition: transform 1.2s ease;
 }
 
-/* Animación de subida cuando aparece */
+/* Animación al aparecer */
 .checkbox-carta:checked ~ .carta-contenido .carta-papel {
   transform: translateY(0);
 }

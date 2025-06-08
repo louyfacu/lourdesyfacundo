@@ -4,29 +4,56 @@
         transform: translateY(2px);
     }
     to {
-        opacity: 1; /* Ajuste para que la animación funcione correctamente */
+        opacity: 1;
         transform: translateY(0);
     }
 }
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
 body {
-     font-weight: 900;
-      font-family: 'Quicksand', sans-serif;
+    font-weight: 900;
+    height: 100%;
+        display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* toda la altura de la pantalla */
+  
+    font-family: 'Quicksand', sans-serif;
     text-align: center;
-    background-color: #2c0655b0; 
-    color: #cab6e4; 
-    animation: fadeIn 4s ease-in-out; /* Aplicando el efecto de desvanecimiento */
+    background-color: #2c0655b0;
+    color: #cab6e4;
+    animation: fadeIn 4s ease-in-out;
+}
+
+header, footer {
+padding: 0%;
+    font-size: 25px;
+    background-color: #523b98f4;
+    color: white;
+    font-family: 'Dancing Script', cursive;
+}
+
+h1 {
+    font-weight: normal;
+}
+
+h2 {
+    font-size: 25px;
+    color: #210479d4;
 }
 
 .gallery {
     padding: 20px;
-     font-weight: 900;
-      font-family: 'Quicksand', sans-serif;
-
-}
-
-h1 {
-    font-weight: normal; /* Ajustando el peso de la fuente */
+    font-weight: 900;
+    font-family: 'Quicksand', sans-serif;
 }
 
 .image-container {
@@ -39,6 +66,7 @@ h1 {
 .row {
     display: flex;
     gap: 15px;
+
     justify-content: center;
 }
 
@@ -47,7 +75,7 @@ h1 {
     padding: 10px;
     background: rgb(178, 158, 213);
     border-radius: 10px;
-    box-shadow: 0 4px 8px #0303be; 
+    box-shadow: 0 4px 8px #3803be;
     text-align: center;
 }
 
@@ -59,26 +87,7 @@ h1 {
 }
 
 .image-box img:hover {
-    transform: scale(1.15); /* Efecto hover mejorado */
-}
-
-h2 {
-    font-size: 25px;
-    color: #210479d4;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-header, footer {
-    padding: 20px;
-    font-size: 25px;
-    background-color: #1b045ff4; 
-    color: white;
-    font-family: 'Dancing Script', cursive;
+    transform: scale(1.15);
 }
 
 .navigation {
@@ -91,10 +100,46 @@ header, footer {
 .nav-link {
     text-decoration: none;
     font-weight: 900;
-      font-family: 'Quicksand', sans-serif;
+    font-family: 'Quicksand', sans-serif;
     font-size: 25px;
     color: #1b045fc8;
 }
+
+.navbar {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    background-color: #6344bef4;
+    padding: 10px 0;
+    z-index: 100;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 0;
+    margin: 0;
+}
+
+.navbar a {
+    color: #fff;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+    color: #fcd2e0;
+}
+
 .events-container {
     display: flex;
     flex-wrap: wrap;
@@ -103,7 +148,7 @@ header, footer {
 }
 
 .event-box {
-    background-color: #1b045ff4; /* Violeta fuerte */
+    background-color: #1b045ff4;
     padding: 20px;
     width: 300px;
     border-radius: 25px;
@@ -118,16 +163,108 @@ header, footer {
 
 .event-box h2 {
     font-size: 24px;
-    color: #af97d1; /* Color rosa suave */
+    color: #af97d1;
 }
 
 .event-box p {
     font-size: 18px;
 }
-@media (max-width: 768px) {
 
+.timeline {
+    width: 100%;
+    overflow-x: auto;
+    padding: 50px 0;
+    background-color: transparent;
+    scrollbar-width: thin;
+    scrollbar-color: #ce697f #fce4ec;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.timeline-track {
+    display: flex;
+    gap: 40px;
+    padding: 0 20px;
+    min-width: fit-content;
+}
+
+
+.timeline-event {
+    background: #ffffff10;
+    border: 1px solid #ffffff33;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    color: #cab6e4;
+    padding: 20px;
+    border-radius: 20px;
+    width: 240px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    transition: all 0.3s ease;
+    word-wrap: break-word;
+    flex-shrink: 0;
+}
+
+.timeline-event:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.45);
+}
+
+.timeline-event h2 {
+    color: #f7d9ff;
+    font-size: 22px;
+    margin-bottom: 10px;
+    white-space: nowrap;
+}
+
+.timeline-event p {
+    font-size: 16px;
+    line-height: 1.4;
+    word-break: break-word;
+    max-height: 180px;
+    overflow-y: auto;
+    padding-right: 5px;
+}
+
+.timeline-event p::-webkit-scrollbar {
+    width: 6px;
+}
+
+.timeline-event p::-webkit-scrollbar-thumb {
+    background-color: #af97d1;
+    border-radius: 20px;
+}
+
+/* Scrollbar general (Webkit) */
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: #fce4ec;
+    border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #ce697f;
+    border-radius: 20px;
+    border: 3px solid #fce4ec;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: #a73f55;
+}
+
+/* Scrollbar Firefox */
+html {
+    scrollbar-width: thin;
+    scrollbar-color: #ce697f #fce4ec;
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
     .image-box {
-        width: 95%; /* Se ajusta mejor en pantallas más pequeñas */
+        width: 95%;
     }
 
     header, footer {
@@ -137,65 +274,4 @@ header, footer {
     .nav-link {
         font-size: 18px;
     }
-}
-.navbar {
-  position: sticky; /* Fijo al hacer scroll */
-  top: 0;
-  width: 100%;
-background-color: #6344bef4; 
-  padding: 10px 0;
-  z-index: 100;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
-}
-
-.navbar ul {
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  padding: 0;
-  margin: 0;
-}
-
-.navbar a {
-  color: #fff;
-  text-decoration: none;
-  font-family: 'Poppins', sans-serif;
-  font-size: 18px;
-  font-weight: 500;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  transition: color 0.3s ease;
-}
-
-.navbar a:hover {
-  color: #fcd2e0;
-}
-
-
-/* Scrollbar rosa linda y suave (Webkit para Chrome, Edge, Safari) */
-::-webkit-scrollbar {
-  width: 12px;
-}
-
-::-webkit-scrollbar-track {
-  background: #fce4ec; /* rosa muy suave */
-  border-radius: 20px;
-}
-
-::-webkit-scrollbar-thumb {
-  background-color: #ce697f; /* rosa principal */
-  border-radius: 20px;
-  border: 3px solid #fce4ec; /* borde suave entre track y thumb */
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background-color: #a73f55; /* tono más fuerte al pasar el mouse */
-}
-
-/* Scrollbar para Firefox */
-html {
-  scrollbar-width: thin;
-  scrollbar-color: #ce697f #fce4ec;
 }
