@@ -21,49 +21,49 @@
 
   <form id="quizForm" class="formulario">
     <div class="pregunta">
-      <p>1. ¿Cuantos animales hay en TODA mi familia? Pista: Te mande foto de TODOS</p>
-      <label><input type="radio" name="p1" value="incorrecta" />8 animales.</label>
-      <label><input type="radio" name="p1" value="correcta" />6 animales.</label>
+      <p>1. ¿Quien es mi cantante favorito?</p>
+      <label><input type="radio" name="p1" value="incorrecta" />Dei V</label>
+      <label><input type="radio" name="p1" value="correcta" />ROA</label>
     </div>
 
     <div class="pregunta">
-      <p>2. ¿Cuando fue la primera vez que entre a tu casa, osea adentro?</p>
-      <label><input type="radio" name="p2" value="correcta" />7 de Febrero</label>
-      <label><input type="radio" name="p2" value="incorrecta" />12 de Febrero</label>
+      <p>2. ¿Cual son mis apodos favoritos de los que vos me decis</p>
+      <label><input type="radio" name="p2" value="incorrecta" />Amorcito y Bebito</label>
+      <label><input type="radio" name="p2" value="correcta" />Gordito y Bebito</label>
     </div>
 
     <div class="pregunta">
-      <p>3. ¿Cual es mi genero de musica favorito?</p>
-      <label><input type="radio" name="p3" value="correcta" />Malenteo de PR y de Chile.</label>
-      <label><input type="radio" name="p3" value="incorrecta" />RKT (El noba, Gonzalo N., L-Gante)</label>
+      <p>3. ¿Que nombres me gustan para nuestros HIJOS?</p>
+      <label><input type="radio" name="p3" value="correcta" />Franco, Luca, Joaquin </label>
+      <label><input type="radio" name="p3" value="incorrecta" />Rodrigo, Lucas, Gonzalo</label>
     </div>
 
     <div class="pregunta">
-      <p>4. ¿Como me decia mi abuelo Celin?</p>
-      <label><input type="radio" name="p4" value="incorrecta" />Toto</label>
-      <label><input type="radio" name="p4" value="correcta" />Lukitas</label>
+      <p>4. ¿Cual es el album del mundial que tengo completo></p>
+      <label><input type="radio" name="p4" value="incorrecta" />Mundial 2014</label>
+      <label><input type="radio" name="p4" value="correcta" />Mundial 2018</label>
     </div>
 
     <div class="pregunta">
-      <p>5. ¿Cual es mi raza favorita de perres belles?</p>
-      <label><input type="radio" name="p5" value="correcta" /> Pitbulls/Goldens.</label>
-      <label><input type="radio" name="p5" value="incorrecta" /> Pastores Alemanes.</label>
+      <p>5. ¿Cuales son mis materias favoritas del colegio?</p>
+      <label><input type="radio" name="p5" value="incorrecta" /> Educacion fisica, y Politica con Villalba</label>
+      <label><input type="radio" name="p5" value="correcta" /> Biologia y Educacion fisica</label>
     </div>
 
     <div class="pregunta">
-      <p>6. ¿Cuando fue el dia que conoci a la perrita mas hermosa del mundo?</p>
-      <label><input type="radio" name="p6" value="incorrecta" />6/2</label>
-      <label><input type="radio" name="p6" value="correcta" />4/2</label>
+      <p>6. ¿Cual es mi comida favorita top 1?</p>
+      <label><input type="radio" name="p6" value="incorrecta" />Pizzas</label>
+      <label><input type="radio" name="p6" value="correcta" />Asado</label>
     </div>
 
     <div class="pregunta">
-      <p>7. ¿Como se llama mi corte de pelo?</p>
-      <label><input type="radio" name="p7" value="incorrecta" />Mid Fade en punta texturizado.</label>
-      <label><input type="radio" name="p7" value="correcta" />Low Fade texturizado.</label>
+      <p>7. ¿Cuantas paginas webs hice hasta ahora?</p>
+      <label><input type="radio" name="p7" value="correcta" />6</label>
+      <label><input type="radio" name="p7" value="incorrecta" />5</label>
     </div>
 
     <div class="pregunta">
-      <p>8. ¿Queres ser mi novia por y para siempre, gorda?</p>
+      <p>8. ¿Me amas?</p>
       <label><input type="radio" name="p8" value="correcta" /> Si.</label>
       <label><input type="radio" name="p8" value="incorrecta" /> No.</label>
     </div>
@@ -82,7 +82,7 @@
       for (let i = 1; i <= total; i++) {
         const seleccionada = form.querySelector(`input[name="p${i}"]:checked`);
         if (!seleccionada) {
-          resultadoTexto += `❌ Pregunta ${i}: No respondiste, USHHH.<br>`;
+          resultadoTexto += `❌ Pregunta ${i}: No respondiste, tipo te falla o que perrite? <br>`;
           continue;
         }
 
@@ -94,7 +94,7 @@
         }
       }
 
-      resultadoTexto = `<strong>Bueno amor, respondiste ${correctas} de ${total} respuestas correctas. Te amo.</strong><br><br>` + resultadoTexto;
+      resultadoTexto = `<strong>Bebita belle, respondiste ${correctas} de ${total} respuestas correctas. Te amo muchisimo.</strong><br><br>` + resultadoTexto;
       document.getElementById("resultado").innerHTML = resultadoTexto;
     }
   </script>

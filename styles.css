@@ -9,9 +9,9 @@ body {
 }
 html, body {
   width: 100%;
-  overflow-x: hidden; /* ❌ evitar scroll lateral */
-  overflow-y: auto;    /* ✅ permitir scroll vertical */
-  touch-action: auto;  /* importante para que el scroll funcione normal */
+  overflow-x: hidden; 
+  overflow-y: auto;    
+  touch-action: auto;  
 }
 .gallery {
     padding: 20px;
@@ -44,9 +44,10 @@ color:#ce697f93
     display: flex;
     gap: 18px;
     font-size: larger;
-    font-weight: bold;
     justify-content: center;
 }
+.row p 
+{font-weight: bolder;}
 
 .image-box {
     width: 250px;
@@ -63,15 +64,11 @@ img {
 }
 
 
-
-
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-
 header, footer {
     font-size: larger;
     padding: 20px;
@@ -80,8 +77,6 @@ header, footer {
     border-radius: 0; 
     font-family: 'Dancing Script', cursive;
 }
-
-
 .image-box img {
    
     transition: transform 0.4s ease-in-out; 
@@ -170,32 +165,28 @@ font-size: 25px;
 }
 
 body {
-    animation: fadeIn 3s ease-in-out;
+    animation: fadeIn 2s ease-in-out;
 }
 
 
-
-/* Evita el zoom hacia afuera */
 html, body {
-    touch-action: manipulation; /* Previene desplazamiento raro en móviles */
+    touch-action: manipulation; 
 
 }
 
-/* Ajuste para móviles: las imágenes ya no se verán cortadas */
 @media (max-width: 768px) {
     .row {
         display: flex;
-        flex-direction: column; /* En móviles, las imágenes se apilan */
-        align-items: center; /* Centra las imágenes */
+        flex-direction: column; 
+        align-items: center;
         gap: 10px;
     }
 
     .image-box {
-        width: 90%; /* Se ajusta bien en pantallas pequeñas */
+        width: 90%; 
     }
-
     img {
-        width: 100%; /* Evita cortes en la imagen */
+        width: 100%; 
     }
 }
 
@@ -230,7 +221,7 @@ html {
 }
 
 .navbar {
-  position: sticky; /* Fijo al hacer scroll */
+  position: sticky; 
   top: 0;
   width: 100%;
 background-color: #ce697fce; 
@@ -243,7 +234,7 @@ background-color: #ce697fce;
   list-style: none;
   display: flex;
   justify-content: center;
-  flex-wrap: wrap; /* 💡 Esta línea evita el recorte */
+  flex-wrap: wrap; 
   gap: 30px;
   padding: 0;
   margin: 0;
@@ -265,19 +256,16 @@ background-color: #ce697fce;
 .navbar a:hover {
   color: #fcd2e0;
 }
-/* 💡 Asegura que el contenido no se recorte en pantallas pequeñas */
 html, body {
   width: 100%;
-  overflow-x: auto; /* Permite scroll lateral si algo se desborda */
+  overflow-x: auto; /
 }
 
-/* 💡 Asegura que ningún elemento se pase del ancho visible */
 * {
   box-sizing: border-box;
   max-width: 100%;
 }
 
-/* 💡 En móviles, permite scroll horizontal para filas de imágenes */
 @media (max-width: 768px) {
   .row {
     overflow-x: auto;
@@ -287,7 +275,7 @@ html, body {
     align-items: stretch;
     gap: 12px;
     padding: 10px;
-    scroll-snap-type: x mandatory; /* Para deslizar suave por imagen */
+    scroll-snap-type: x mandatory;
   }
 
   .image-box {
@@ -307,27 +295,27 @@ html, body {
     overflow: hidden;
   }
 }
-/* Scrollbar rosa linda y suave (Webkit para Chrome, Edge, Safari) */
+
 ::-webkit-scrollbar {
   width: 12px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #fce4ec; /* rosa muy suave */
+  background: #fce4ec; 
   border-radius: 20px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #ce697f; /* rosa principal */
+  background-color: #ce697f; 
   border-radius: 20px;
-  border: 3px solid #fce4ec; /* borde suave entre track y thumb */
+  border: 3px solid #fce4ec; 
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background-color: #a73f55; /* tono más fuerte al pasar el mouse */
+  background-color: #a73f55; 
 }
 
-/* Scrollbar para Firefox */
+
 html {
   scrollbar-width: thin;
   scrollbar-color: #ce697f #fce4ec;
@@ -363,7 +351,6 @@ p {
 }
 
 
-/* Estilos carta */
 .carta-de-amor {
   background: #fff0f8;
   padding: 60px 20px;
@@ -381,7 +368,6 @@ p {
   margin-bottom: 30px;
 }
 
-/* Botón abrir */
 .boton-carta {
   display: inline-block;
   background-color: #e75480;
@@ -402,17 +388,16 @@ p {
   display: none;
 }
 
-/* Carta oculta por defecto */
+
 .carta-contenido {
   max-height: 0;
   overflow: hidden;
   transition: max-height 1.2s ease, opacity 1.2s ease;
   opacity: 0;
   margin-top: 20px;
-  position: relative; /* Asegura que no se corte por animaciones */
+  position: relative; 
 }
 
-/* Mostrar carta cuando el checkbox está marcado */
 .checkbox-carta:checked ~ .carta-contenido {
   max-height: 9999px;
   opacity: 1;
@@ -434,7 +419,6 @@ p {
   transition: transform 1.2s ease;
 }
 
-/* Animación al aparecer */
 .checkbox-carta:checked ~ .carta-contenido .carta-papel {
   transform: translateY(0);
 }
