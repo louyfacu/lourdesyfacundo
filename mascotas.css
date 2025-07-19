@@ -1,13 +1,28 @@
 @keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(2px);
-    }
-    to {
-        opacity: 2;
-        transform: translateY(0);
-    }
+from {
+    opacity: 0;
+    transform: translateY(30px);
 }
+to {
+    opacity: 1;
+    transform: translateY(0);
+}
+        }
+
+        @keyframes float {
+0%, 100% { transform: translateY(0px); }
+50% { transform: translateY(-8px); }
+        }
+
+        @keyframes sparkle {
+0%, 100% { opacity: 0; transform: scale(0) rotate(0deg); }
+50% { opacity: 1; transform: scale(1) rotate(180deg); }
+        }
+
+        @keyframes heartbeat {
+0%, 100% { transform: scale(1); }
+50% { transform: scale(1.05); }
+        }
 
 @media (max-width: 768px) {
 
@@ -24,10 +39,8 @@
     }
 }
 body {
-    animation: fadeIn 2s ease-in-out;
+    animation: fadeIn 1.3s ease-in-out;
 }
-
-
 
 
 body {
@@ -61,7 +74,7 @@ body {
     width: 250px;
     padding: 10px;
     background: rgb(199, 178, 216);
-    border-radius: 10px;
+    border-radius: 40px;
     box-shadow: 0 4px 8px #723946; 
     text-align: center;
 }
@@ -75,18 +88,40 @@ h1 {
        font-weight: 700;
        font-size: 100;
 }
-h2 {
+ h2 {
 font-weight: 700;
-font-size: 25px;
-color:#ce697f}
+font-size: clamp(1.8rem, 4vw, 2.5rem);
+color: #ce697f;
+margin: 40px 0 20px;
+letter-spacing: 8px;
+text-transform: uppercase;
+position: relative;
+animation: fadeIn 1s ease-out 0.5s both;
+        }
 
-h3 {
-  
-font-weight: 450;
-font-size: 18px;
-font-family: 'Quicksand', sans-serif;
-color:#ce697f93
-}
+
+    h2::after {
+content: "";
+position: absolute;
+bottom: -10px;
+left: 50%;
+transform: translateX(-50%);
+width: 100px;
+height: 3px;
+background: linear-gradient(90deg, transparent, #ce697f, transparent);
+border-radius: 2px;
+        }
+
+
+  h3 {
+            font-weight: 450;
+            font-size: clamp(1rem, 3vw, 1.3rem);
+            font-family: 'Quicksand', sans-serif;
+            color: #ce697f93;
+            margin-bottom: 40px;
+            font-style: italic;
+            animation: fadeIn 1s ease-out 0.8s both;
+        }
 
 
 * {
@@ -115,7 +150,7 @@ footer {
 }
 
 .image-box img:hover {
-    transform: scale(1.1); 
+    transform: scale(1); 
 }
 
 
@@ -166,7 +201,7 @@ footer {
 
 
 .image-box img:hover {
-    transform: scale(1.15); /* Efecto hover mejorado */
+    transform: scale(1.13); /* Efecto hover mejorado */
 }
 
 

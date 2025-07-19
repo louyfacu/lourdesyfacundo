@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Quicksand:wght@500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Quicksand:wght@300;400;500;600;700&display=swap');
 
 * {
   margin: 0;
@@ -12,116 +12,159 @@ html {
 
 body {
   font-family: 'Quicksand', sans-serif;
-  background: #ffe6ef;
+  background: linear-gradient(135deg, #ffe6ef 0%, #f8d7da 50%, #ffe6ef 100%);
   color: #0a4d71;
   text-align: center;
-  animation: fadeIn 1s ease-in-out;
-}
-
-header, footer {
-  background-color: #89aeec;
-  color: white;
-  font-size: 50px;
-  padding: 20px;
-  font-family: 'Dancing Script', cursive;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-}
-
-h1 {
-  font-family: 'Dancing Script', cursive;
-  font-size: 40px;
-  margin: 10px;
-}
-
-h2 {
-  font-family: 'Quicksand', sans-serif;
-  font-size: 36px;
-  margin: 30px 0 20px;
-}
-
-.dreams-section {
-  padding: 20px;
-}
-
-.dreams-gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 20px;
-  padding: 20px;
-  max-width: 1000px;
-  margin: 0 auto;
-}
-
-.flip-card {
-  perspective: 1000px;
-}
-
-.flip-inner {
+  animation: fadeIn 1.5s ease-in-out;
   position: relative;
-  width: 100%;
-  padding-top: 100%;
-  transition: transform 0.6s;
-  transform-style: preserve-3d;
-  cursor: pointer;
+  overflow-x: hidden;
 }
 
-.flip-card.flipped .flip-inner {
-  transform: rotateY(180deg);
-}
-
-.flip-front,
-.flip-back {
-  position: absolute;
+/* Estrellas animadas de fondo */
+.stars {
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  border-radius: 20px;
-  backface-visibility: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 28px;
-  box-shadow: 0 4px 12px #2c4b9f;
-  transition: box-shadow 0.3s;
+  pointer-events: none;
+  z-index: 1;
 }
 
-.flip-front {
-  background: #fff0f5;
-  color: #79aae2;
-  font-size: 48px;
-}
-
-.flip-back {
-  background: #92b0dd;
-  color: #24385c;
-  transform: rotateY(180deg);
-  padding: 10px;
+.stars::before {
+  content: '✨ ⭐ 💫 ✨ ⭐ 💫 ✨ ⭐ 💫 ✨ ⭐ 💫';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 200%;
+  height: 100%;
+  animation: twinkle 20s linear infinite;
   font-size: 20px;
-  font-weight: bold;
+  opacity: 0.3;
+  white-space: nowrap;
+  line-height: 100px;
 }
 
-/* Fade animation */
-@keyframes fadeIn {
-  from {
+@keyframes twinkle {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(50%); }
+}
+
+/* Corazones flotantes */
+.floating-hearts {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.heart {
+  position: absolute;
+  font-size: 20px;
+  animation: float 8s ease-in-out infinite;
+  opacity: 0.6;
+}
+
+.heart:nth-child(1) {
+  left: 10%;
+  animation-delay: 0s;
+  animation-duration: 8s;
+}
+
+.heart:nth-child(2) {
+  left: 30%;
+  animation-delay: 2s;
+  animation-duration: 10s;
+}
+
+.heart:nth-child(3) {
+  left: 50%;
+  animation-delay: 4s;
+  animation-duration: 9s;
+}
+
+.heart:nth-child(4) {
+  left: 70%;
+  animation-delay: 6s;
+  animation-duration: 11s;
+}
+
+.heart:nth-child(5) {
+  left: 90%;
+  animation-delay: 1s;
+  animation-duration: 7s;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(100vh) rotate(0deg);
     opacity: 0;
-    transform: translateY(8px);
   }
-  to {
-    opacity: 1;
-    transform: translateY(0);
+  10%, 90% {
+    opacity: 0.6;
+  }
+  50% {
+    transform: translateY(-10px) rotate(180deg);
+    opacity: 0.8;
   }
 }
 
-/* Navbar */
+/* Header mejorado */
+header {
+  background: linear-gradient(45deg, #89aeec, #7fa3e8, #89aeec);
+  color: white;
+  padding: 40px 20px;
+  position: relative;
+  box-shadow: 0 4px 20px rgba(137, 174, 236, 0.4);
+  z-index: 10;
+}
+
+.header-content {
+  position: relative;
+}
+
+header h1 {
+  font-family: 'Dancing Script', cursive;
+  font-size: 48px;
+  margin: 0;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  background: linear-gradient(45deg, #fff, #e8f4fd);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 3s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  0%, 100% { filter: brightness(1); }
+  50% { filter: brightness(1.2); }
+}
+
+.header-decoration {
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 150px;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, white, transparent);
+  border-radius: 10px;
+}
+
+/* Navbar mejorada */
 .navbar {
   position: sticky;
   top: 0;
   width: 100%;
-  background-color: #3781bebc;
-  padding: 10px 0;
+  background: rgba(55, 129, 190, 0.9);
+  backdrop-filter: blur(10px);
+  padding: 15px 0;
   z-index: 100;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.361);
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.2);
 }
 
 .navbar ul {
@@ -137,94 +180,344 @@ h2 {
 .navbar a {
   color: #fff;
   text-decoration: none;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Quicksand', sans-serif;
   font-size: 18px;
-  font-weight: 500;
+  font-weight: 600;
   display: flex;
   align-items: center;
   gap: 8px;
-  transition: color 0.3s ease;
+  padding: 8px 16px;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.1);
 }
 
 .navbar a:hover {
-  color: #c7d7f8;
+  background: rgba(255, 255, 255, 0.2);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
-/* 📱 Responsive Design */
+.nav-icon {
+  font-size: 16px;
+}
+
+/* Sección principal mejorada */
+.dreams-section {
+  padding: 60px 20px;
+  position: relative;
+  z-index: 10;
+}
+
+.section-header {
+  margin-bottom: 50px;
+}
+
+.section-header h2 {
+  font-family: 'Dancing Script', cursive;
+  font-size: 48px;
+  margin: 0 0 15px 0;
+  color: #0a4d71;
+  text-shadow: 2px 2px 4px rgba(10, 77, 113, 0.3);
+}
+
+.subtitle {
+  font-size: 20px;
+  color: #2c5aa0;
+  font-weight: 400;
+  font-style: italic;
+  opacity: 0.8;
+}
+
+/* Galería mejorada */
+.dreams-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Tarjetas mejoradas */
+.flip-card {
+  perspective: 1000px;
+  height: 220px;
+}
+
+.flip-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transform-style: preserve-3d;
+  cursor: pointer;
+}
+
+.flip-card:hover .flip-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-front,
+.flip-back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 25px;
+  backface-visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 25px rgba(44, 75, 159, 0.3);
+  transition: all 0.3s ease;
+}
+
+.flip-card:hover .flip-front,
+.flip-card:hover .flip-back {
+  box-shadow: 0 12px 35px rgba(44, 75, 159, 0.4);
+}
+
+.flip-front {
+  background: linear-gradient(135deg, #fff0f5, #fce4ec, #fff0f5);
+  color: #79aae2;
+  position: relative;
+  overflow: hidden;
+}
+
+.flip-front::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transform: rotate(45deg);
+  animation: shine 3s ease-in-out infinite;
+}
+
+@keyframes shine {
+  0%, 100% { transform: translateX(-100%) rotate(45deg); }
+  50% { transform: translateX(100%) rotate(45deg); }
+}
+
+.card-content {
+  position: relative;
+  z-index: 2;
+}
+
+.emoji {
+  font-size: 64px;
+  display: block;
+  animation: bounce 2s ease-in-out infinite;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+  40% { transform: translateY(-10px); }
+  60% { transform: translateY(-5px); }
+}
+
+.sparkles {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 16px;
+  animation: sparkle 1.5s ease-in-out infinite;
+}
+
+@keyframes sparkle {
+  0%, 100% { opacity: 0.5; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.2); }
+}
+
+.flip-back {
+  background: linear-gradient(135deg, #92b0dd, #7fa3e8, #92b0dd);
+  color: white;
+  transform: rotateY(180deg);
+  padding: 20px;
+}
+
+.back-content {
+  text-align: center;
+}
+
+.back-emoji {
+  font-size: 32px;
+  display: block;
+  margin-bottom: 15px;
+}
+
+.back-content p {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.4;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Footer mejorado */
+footer {
+  background: linear-gradient(45deg, #89aeec, #7fa3e8, #89aeec);
+  color: white;
+  padding: 40px 20px;
+  position: relative;
+  box-shadow: 0 -4px 20px rgba(137, 174, 236, 0.4);
+  z-index: 10;
+}
+
+.footer-content {
+  position: relative;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.footer-heart {
+  font-size: 40px;
+  margin-bottom: 15px;
+  animation: heartbeat 2s ease-in-out infinite;
+}
+
+@keyframes heartbeat {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+.footer-content p {
+  font-family: 'Dancing Script', cursive;
+  font-size: 32px;
+  margin: 0;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.footer-decoration {
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 150px;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, white, transparent);
+  border-radius: 10px;
+}
+
+/* Animación de entrada */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Scrollbar personalizada */
+::-webkit-scrollbar {
+  width: 14px;
+}
+
+::-webkit-scrollbar-track {
+  background: #fce4ec;
+  border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(45deg, #ce697f, #d1869a);
+  border-radius: 20px;
+  border: 3px solid #fce4ec;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(45deg, #a73f55, #b85f73);
+}
+
+html {
+  scrollbar-width: thin;
+  scrollbar-color: #ce697f #fce4ec;
+}
+
+/* Responsive mejorado */
 @media (max-width: 768px) {
-  header, footer {
-    font-size: 28px;
-    padding: 15px;
-  }
-
-  h1 {
-    font-size: 26px;
-  }
-
-  h2 {
-    font-size: 22px;
-  }
-
-  .dreams-gallery {
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-    padding: 10px;
-  }
-
-  .flip-front {
+  header h1 {
     font-size: 36px;
   }
-
-  .flip-back {
+  
+  .section-header h2 {
+    font-size: 36px;
+  }
+  
+  .subtitle {
+    font-size: 18px;
+  }
+  
+  .dreams-gallery {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 20px;
+    padding: 15px;
+  }
+  
+  .flip-card {
+    height: 180px;
+  }
+  
+  .emoji {
+    font-size: 48px;
+  }
+  
+  .back-emoji {
+    font-size: 28px;
+  }
+  
+  .back-content p {
     font-size: 14px;
   }
-
+  
   .navbar ul {
-    gap: 15px;
-    flex-direction: column;
+    gap: 20px;
+    flex-direction: row;
   }
-
+  
   .navbar a {
     font-size: 16px;
+    padding: 6px 12px;
+  }
+  
+  .footer-content p {
+    font-size: 24px;
   }
 }
 
 @media (max-width: 480px) {
   .dreams-gallery {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 15px;
   }
-
-  .flip-front {
-    font-size: 30px;
+  
+  .flip-card {
+    height: 160px;
   }
-
-  .flip-back {
+  
+  .emoji {
+    font-size: 40px;
+  }
+  
+  .back-content p {
     font-size: 13px;
   }
-}
-
-
-/* Scrollbar rosa linda y suave (Webkit para Chrome, Edge, Safari) */
-::-webkit-scrollbar {
-  width: 12px;
-}
-
-::-webkit-scrollbar-track {
-  background: #fce4ec; /* rosa muy suave */
-  border-radius: 20px;
-}
-
-::-webkit-scrollbar-thumb {
-  background-color: #ce697f; /* rosa principal */
-  border-radius: 20px;
-  border: 3px solid #fce4ec; /* borde suave entre track y thumb */
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background-color: #a73f55; /* tono más fuerte al pasar el mouse */
-}
-
-/* Scrollbar para Firefox */
-html {
-  scrollbar-width: thin;
-  scrollbar-color: #ce697f #fce4ec;
+  
+  header h1 {
+    font-size: 28px;
+  }
+  
+  .section-header h2 {
+    font-size: 28px;
+  }
+  
+  .navbar ul {
+    flex-direction: column;
+    gap: 10px;
+  }
 }

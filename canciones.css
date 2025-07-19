@@ -1,110 +1,300 @@
-/* Fondo general naranja clarito */
+
+
+/* Variables CSS para consistencia */
+:root {
+  --primary-orange: #ee8937;
+  --light-orange: #fff2e0;
+  --medium-orange: #fbe3cd;
+  --accent-orange: #d48233;
+  --hover-orange: #ffb347;
+  --border-orange: #ffd9a8;
+  --shadow-orange: rgba(237, 185, 142, 0.6);
+  --text-orange: #cc7722;
+  --pink-scroll: #ce697f;
+  --pink-light: #fce4ec;
+}
+
+
 body {
-  background-color: #fff2e0; /* Naranja clarito */
-  font-family: 'Quicksand', sans-serif;
+  background: linear-gradient(135deg, var(--light-orange) 0%, #fef7ed 50%, var(--light-orange) 100%);
+  background-attachment: fixed;
+  font-family: 'Inter', sans-serif;
   margin: 0;
   padding: 0;
   width: 100%;
+  line-height: 1.6;
+  overflow-x: hidden;
 }
 
-/* Header estilizado */
+/* Header y footer modernos con gradiente */
 header, footer {
   width: 100%;
   text-align: center;
-  font-size: larger;
-  padding: 18px;
-  background-color: #ee8937; /* Naranja fuerte */
+  font-size: clamp(1.2rem, 3vw, 1.8rem);
+  padding: 10px 20px;
+  background: linear-gradient(135deg, var(--primary-orange) 0%, #e07a2e 100%);
   color: white;
   font-family: 'Dancing Script', cursive;
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+  font-weight: 600;
+  box-shadow: 0 8px 32px rgba(238, 137, 55, 0.3);
+  position: relative;
+  overflow: hidden;
 }
 
-/* Navbar fija */
+/* Efecto de brillo en header */
+header::before, footer::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transform: rotate(45deg);
+  animation: headerShine 3s ease-in-out infinite;
+}
+
+@keyframes headerShine {
+  0%, 100% { transform: rotate(45deg) translateX(-100%); }
+  50% { transform: rotate(45deg) translateX(100%); }
+}
+
+/* Navbar flotante moderna */
 .navbar {
   position: sticky;
   top: 0;
   width: 100%;
-  background-color: #e89d4cb9;
-  padding: 12px 0;
+  background: rgba(218, 161, 100, 0.95);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  padding: 15px 0;
   z-index: 100;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.488);
 }
 
 .navbar ul {
   list-style: none;
   display: flex;
   justify-content: center;
-  gap: 30px;
+  align-items: center;
+  gap: 40px;
   margin: 0;
   padding: 0;
+  flex-wrap: wrap;
+}
+
+.navbar li {
+  position: relative;
 }
 
 .navbar a {
   color: #fff;
   text-decoration: none;
-  font-family: 'Poppins', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 18px;
   font-weight: 500;
-  transition: color 0.3s ease;
+  padding: 12px 20px;
+  border-radius: 25px;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.navbar a::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  transition: left 0.5s;
 }
 
 .navbar a:hover {
-  color: #ffb347;
+  color: var(--hover-orange);
+  background: rgba(215, 157, 157, 0.1);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(216, 178, 126, 0.3);
 }
 
-/* Contenedor general del álbum */
+.navbar a:hover::before {
+  left: 100%;
+}
+
+/* Contenedor del álbum con diseño moderno */
 .album-musical {
-  padding: 40px;
-  background-color: #fbe3cd;
-  border-radius: 25px;
-  box-shadow: 0 0 20px #edb98eaa;
-  margin: 40px auto;
+  padding: 50px 40px;
+  background: rgba(251, 227, 205, 0.8);
+  backdrop-filter: blur(10px);
+  border-radius: 30px;
+  box-shadow: 
+    0 25px 50px rgba(237, 185, 142, 0.3),
+    0 0 0 1px rgba(255, 255, 255, 0.2);
+  margin: 50px auto;
   width: 90%;
-  max-width: 720px;
+  max-width: 800px;
+  position: relative;
+  overflow: hidden;
 }
 
-/* Título del álbum */
+.album-musical::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(255, 217, 168, 0.1) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+/* Título del álbum elegante */
 .album-musical h2 {
-  font-family: 'Quicksand', sans-serif;
-  color: #d48233;
-  margin-bottom: 30px;
-  font-size: 36px;
-  font-weight: 1200;
+  font-family: 'Playfair Display', serif;
+  color: var(--accent-orange);
+  margin-bottom: 40px;
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 900;
+  text-align: center;
+  position: relative;
+  text-shadow: 0 2px 10px rgba(212, 130, 51, 0.2);
 }
+
+.album-musical h2::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(90deg, transparent, var(--accent-orange), transparent);
+  border-radius: 2px;
+}
+
 h2 {
-    text-align: center;
-     font-family: 'Quicksand', sans-serif;
+  text-align: center;
+  font-family: 'Playfair Display', serif;
 }
 
-/* Caja para cada canción */
+/* Caja para cada canción rediseñada */
 .caja-cancion {
-  background-color: #fff5e7;
-  border: 2px solid #ffd9a8;
-  border-radius: 15px;
-  padding: 18px;
-  margin-bottom: 25px;
-  box-shadow: 0 4px 12px #e3a47f90;
+  background: linear-gradient(135deg, #fff5e7 0%, #fefaf5 100%);
+  border: 2px solid transparent;
+  background-clip: padding-box;
+  border-radius: 20px;
+  padding: 25px;
+  margin-bottom: 30px;
+  box-shadow: 
+    0 10px 30px rgba(227, 164, 127, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.5);
   text-align: left;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
 }
 
-/* Nombre de la canción */
+/* Borde gradiente para las canciones */
+.caja-cancion::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  padding: 2px;
+  background: linear-gradient(135deg, var(--border-orange), #ffcc80, var(--border-orange));
+  border-radius: 20px;
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: xor;
+  -webkit-mask-composite: xor;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* Efecto hover mejorado para las canciones */
+.caja-cancion:hover {
+  transform: translateY(-12px) scale(1.03);
+  background: linear-gradient(135deg, #fff8f0 0%, #fffcf8 100%);
+  box-shadow: 
+    0 20px 40px rgba(212, 146, 80, 0.25),
+    0 0 40px rgba(255, 183, 71, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.7);
+}
+
+.caja-cancion:hover::after {
+  opacity: 1;
+}
+
+/* Efecto de brillo mejorado */
+.caja-cancion::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, 
+    transparent, 
+    rgba(255, 243, 224, 0.4), 
+    rgba(255, 255, 255, 0.6), 
+    rgba(255, 243, 224, 0.4), 
+    transparent);
+  transform: rotate(45deg);
+  transition: all 0.8s ease;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.caja-cancion:hover::before {
+  opacity: 1;
+  animation: enhancedShine 0.8s ease-in-out;
+}
+
+@keyframes enhancedShine {
+  0% { transform: rotate(45deg) translateX(-100%); }
+  100% { transform: rotate(45deg) translateX(100%); }
+}
+
+/* Nombre de la canción estilizado */
 .caja-cancion p {
-  font-weight: 700;
-  color: #cc7722;
-  margin-bottom: 12px;
-  font-size: 19px;
-  font-family: 'Quicksand', sans-serif;
+  font-weight: 600;
+  color: var(--text-orange);
+  margin-bottom: 15px;
+  font-size: clamp(1rem, 2.5vw, 1.3rem);
+  font-family: 'Inter', sans-serif;
+  transition: all 0.4s ease;
+  position: relative;
+  z-index: 2;
+  letter-spacing: 0.5px;
 }
 
-/* Spotify player responsive */
+.caja-cancion:hover p {
+  color: #b8661a;
+  text-shadow: 0 4px 15px rgba(204, 119, 34, 0.3);
+  transform: translateY(-3px);
+}
+
+/* Spotify player mejorado */
 .caja-cancion iframe {
-  border-radius: 12px;
+  border-radius: 15px;
   width: 100%;
   height: 80px;
   border: none;
+  transition: all 0.4s ease;
+  position: relative;
+  z-index: 2;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
-/* Reset y scroll suave */
+.caja-cancion:hover iframe {
+  border-radius: 18px;
+  box-shadow: 
+    0 8px 25px rgba(0, 0, 0, 0.2),
+    0 0 20px rgba(255, 183, 71, 0.1);
+  transform: scale(1.02);
+}
+
+/* Reset mejorado */
 * {
   box-sizing: border-box;
 }
@@ -113,30 +303,101 @@ html {
   scroll-behavior: smooth;
 }
 
-
-
-/* Scrollbar rosa linda y suave (Webkit para Chrome, Edge, Safari) */
+/* Scrollbar elegante */
 ::-webkit-scrollbar {
-  width: 12px;
+  width: 14px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #fce4ec; /* rosa muy suave */
-  border-radius: 20px;
+  background: var(--pink-light);
+  border-radius: 25px;
+  margin: 5px;
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: #ce697f; /* rosa principal */
-  border-radius: 20px;
-  border: 3px solid #fce4ec; /* borde suave entre track y thumb */
+  background: linear-gradient(45deg, var(--pink-scroll), #d4809a);
+  border-radius: 25px;
+  border: 3px solid var(--pink-light);
+  transition: background 0.3s ease;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background-color: #a73f55; /* tono más fuerte al pasar el mouse */
+  background: linear-gradient(45deg, #a73f55, #b85570);
 }
 
 /* Scrollbar para Firefox */
 html {
   scrollbar-width: thin;
-  scrollbar-color: #ce697f #fce4ec;
+  scrollbar-color: var(--pink-scroll) var(--pink-light);
+}
+
+/* Animaciones adicionales */
+.album-musical {
+  animation: fadeInUp 0.8s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.caja-cancion {
+  animation: slideIn 0.6s ease-out forwards;
+  opacity: 0;
+}
+
+.caja-cancion:nth-child(1) { animation-delay: 0.1s; }
+.caja-cancion:nth-child(2) { animation-delay: 0.2s; }
+.caja-cancion:nth-child(3) { animation-delay: 0.3s; }
+.caja-cancion:nth-child(4) { animation-delay: 0.4s; }
+.caja-cancion:nth-child(5) { animation-delay: 0.5s; }
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Responsive mejorado */
+@media (max-width: 768px) {
+  .album-musical {
+    padding: 30px 20px;
+    margin: 30px 15px;
+  }
+  
+  .caja-cancion {
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .navbar ul {
+    gap: 20px;
+  }
+  
+  .navbar a {
+    font-size: 16px;
+    padding: 10px 15px;
+  }
+}
+
+/* Efectos de focus para accesibilidad */
+.caja-cancion:focus-visible {
+  outline: 3px solid var(--hover-orange);
+  outline-offset: 2px;
+}
+
+.navbar a:focus-visible {
+  outline: 2px solid white;
+  outline-offset: 2px;
 }
